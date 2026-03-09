@@ -1,0 +1,24 @@
+span {
+  font-size: 24px;
+}
+
+.icons-container-item{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+
+@media only screen and (max-width: 900px) {
+    .icons-container{
+      flex-direction: column;
+  }
+
+  .icons-container-item{
+    
+    flex-direction:row;
+    justify-content: start;
+    gap: 1rem;
+  }
+}

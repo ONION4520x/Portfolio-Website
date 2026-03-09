@@ -1,0 +1,76 @@
+<div class="d-flex flex-column justify-content-center align-items-center">
+    <span class="fs-2 fw-bold d-block mb-3">Contact Me</span>
+    
+    <form [formGroup]="contactform" (ngSubmit)="onFormSubmit()" >
+
+        <!-- <input type="hidden" name="g-recaptcha-response" id="g-recaptcha-response"> -->
+
+        <div class="d-flex flex-column gap-2">
+            <div>
+                <span class="form-label fs-3 fw-bold">Name:</span>
+            </div>
+            <div>
+                <input 
+                    class="p-2 rounded" 
+                    type="text"
+                    name="senderName"
+                    formControlName="senderName"
+                    [ngClass]="{'is-invalid': contactform.get('senderName')?.invalid && contactform.get('senderName')?.touched}"
+                />
+            </div>
+
+            <div>
+                @if(contactform.get('senderName')?.invalid && contactform.get('senderName')?.touched) {
+                    <small class="text-danger">Name is required!</small>
+                }
+            </div>
+
+            <div>
+                <span class="form-label fs-3 fw-bold">Email:</span>
+            </div>
+            <div>
+                <input 
+                    type="email" 
+                    class="p-2 rounded"
+                    formControlName="email"
+                    [ngClass]="{'is-invalid': contactform.get('email')?.invalid && contactform.get('email')?.touched}"
+                />
+            </div>
+
+            <div>
+                @if(contactform.get('email')?.invalid && contactform.get('email')?.touched) {
+                    @if (contactform.get('email')?.hasError('required')) {
+                        <small class="text-danger">Email is required!</small>
+                    }
+                    @if (contactform.get('email')?.hasError('email') || contactform.get('email')?.hasError('pattern')) {
+                        <small class="text-danger">Please enter a valid email address.</small>
+                    }
+                }
+                
+            </div>
+
+            <div>
+                <span class="form-label fs-3 fw-bold">Message:</span>
+            </div>
+            <div>
+                <textarea
+                    class="p-2 rounded no-resize"
+                    formControlName="message"
+                >
+                </textarea>
+            </div>
+        </div>
+        
+        
+            <div class="g-recaptcha" data-sitekey="6Ldqx4IsAAAAAASAfX9Xv1bhQhB6AplEsU2z0oa3" data-action="FORM_SUBMISSION" data-callback="onCaptchaSuccess"></div>
+        
+        
+
+        <div class="row p-0 m-0 mt-2">
+            <input type="submit" class="btn fs-5 fw-bold submit-button" >
+        </div>
+           
+       
+    </form>
+
+</div>

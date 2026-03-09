@@ -1,0 +1,56 @@
+<div class="m-5 p-5 pt-0">
+    <div>
+        <span class="fs-2 fw-bold d-block">
+            Projects
+        </span>
+
+        <div class="d-flex align-items-center w-100">
+            <div class="d-flex flex-column p-3 rounded gap-4 custom-hover-style w-100 shadow-sm mb-2">
+                <div class="d-flex justify-content-between align-items-center gap-3">
+                    <span class="fs-5 fw-bold">Music Discord Bot</span>
+                    <span (click)="projectRedirect(1, $event)">
+                        <i class="fa-solid fa-up-right-from-square"></i>
+                    </span>
+                </div>
+                <small class="fs-5">
+                    I developed a custom Discord integration using Node.js that leverages the yt-dlp library
+                    to stream audio from YouTube with maximum stability. The project focuses on efficient stream
+                    handling to deliver a stable music experience for my discord.
+                </small>
+                <div>
+                    <div class="d-flex flex-wrap justify-content-start align-items-center gap-2">
+                        <span class="skills-lang rounded">Javascript</span>
+                        <span class="skills-framew rounded">Discord.js</span>
+                        <span class="skills-library rounded">yt-dlp</span>
+                        <span class="skills-other rounded">Node.js</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="d-flex align-items-center w-100">
+            <div class="d-flex flex-column p-3 rounded gap-4 custom-hover-style w-100 shadow-sm">
+                <div class="d-flex justify-content-between align-items-center gap-3">
+                    <span class="fs-5 fw-bold">Lyrics Finder</span>
+                    <span (click)="projectRedirect(2, $event)">
+                        <i class="fa-solid fa-up-right-from-square"></i>
+                    </span>
+                </div>
+                <p class="fs-5">
+                    A modular JavaScript utility designed to scrape and extract song lyrics from Genius and AZLyrics. It
+                    leverages cuimp for browser impersonation to bypass anti-scraping protections and Cheerio for
+                    efficient HTML DOM parsing and data extraction.
+                </p>
+                <div>
+                    <div class="d-flex flex-wrap justify-content-start align-items-center gap-2">
+                        <span class="skills-lang rounded">Javascript</span>
+                        <span class="skills-library rounded">Cheerio</span>
+                        <span class="skills-library rounded">cuimp</span>
+                        <span class="skills-other rounded">Node.js</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

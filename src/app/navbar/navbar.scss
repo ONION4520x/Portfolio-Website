@@ -1,0 +1,9 @@
+.navbar-brand{
+    color: #EEEEEE !important;
+}
+
+
+.navbar-brand:hover, .nav-link:hover{
+    color: #00ADB5 !important;
+    transition: all 0.3s ease-in;
+}

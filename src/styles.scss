@@ -1,11 +1,50 @@
 /* You can add global styles to this file, and also import other style files */
 
 /* Importing Bootstrap SCSS file. */
-@import 'bootstrap/scss/bootstrap';
+@use "@fortawesome/fontawesome-free/css/all.min.css";
+@use 'bootstrap/scss/bootstrap';
+@import url('https://fonts.googleapis.com/css2?family=Doto:wght@100..900&display=swap');
+
+
+html {
+  scroll-behavior: smooth;
+  box-sizing: border-box;
+}
 
 body {
   margin: 0;
-  font-family: 'Segoe UI';
+  font-family: "Doto", Segoe UI;
   background-color: #222831; /* Light grey background */
   color: #EEEEEE;
+}
+
+.icons{
+  font-size: 3rem;
+}
+
+input {
+    font-family: 'Courier New', Courier, monospace;
+    width: 100%;       
+    min-width: 450px; 
+    max-width: 100vw; 
+}
+
+textarea{
+  font-family: 'Courier New', Courier, monospace;     
+  min-width: 450px; 
+  max-width: 100vw;
+  min-height: 200px;
+}
+
+a{
+  text-decoration: none;
+  color: inherit;
+}
+
+.is-invalid {
+  border: 2px solid #DC3545 !important;
+}
+
+.is-valid {
+  // border: 2px solid green !important;
 }

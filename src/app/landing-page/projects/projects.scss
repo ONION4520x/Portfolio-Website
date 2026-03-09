@@ -1,0 +1,38 @@
+.custom-hover-style {
+  transition: all 0.3s ease;
+  cursor: pointer;
+  outline: none;
+}
+
+.custom-hover-style:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--bs-box-shadow) !important;
+}
+
+.skills-lang {
+  font-family: monospace;
+  padding: 0.25rem !important;
+  border: 2px solid #8494FF;
+  background-color: #6367FF;
+}
+
+.skills-framew {
+  font-family: monospace;
+  padding: 0.25rem !important;
+  border: 2px solid #E19898;
+  background-color: #A2678A;
+}
+
+.skills-library {
+  font-family: monospace;
+  padding: 0.25rem !important;
+  border: 2px solid #9EC8B9;
+  background-color: #677D6A;
+}
+
+.skills-other {
+  font-family: monospace;
+  padding: 0.25rem !important;
+  border: 2px solid #456882;
+  background-color: #1B3C53;
+}
