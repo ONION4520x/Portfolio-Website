@@ -3,8 +3,6 @@
     
     <form [formGroup]="contactform" (ngSubmit)="onFormSubmit()" >
 
-        <!-- <input type="hidden" name="g-recaptcha-response" id="g-recaptcha-response"> -->
-
         <div class="d-flex flex-column gap-2">
             <div>
                 <span class="form-label fs-3 fw-bold">Name:</span>
@@ -60,12 +58,9 @@
                 </textarea>
             </div>
         </div>
-        
-        
-            <div class="g-recaptcha" data-sitekey="6Ldqx4IsAAAAAASAfX9Xv1bhQhB6AplEsU2z0oa3" data-action="FORM_SUBMISSION" data-callback="onCaptchaSuccess"></div>
-        
-        
 
+        <div class="g-recaptcha" [attr.data-sitekey]="siteKey" data-action="FORM_SUBMISSION" data-callback="onCaptchaSuccess"></div>
+        
         <div class="row p-0 m-0 mt-2">
             <input type="submit" class="btn fs-5 fw-bold submit-button" >
         </div>

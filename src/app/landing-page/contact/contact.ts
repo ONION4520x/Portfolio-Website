@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common'
 import { FormControl, FormGroup, ReactiveFormsModule, Validators} from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { Notification } from '../../shared-component/services/notification';
+import { environment } from '../../../enviroments/enviroments';
 
 @Component({
   selector: 'app-contact',
@@ -11,7 +12,8 @@ import { Notification } from '../../shared-component/services/notification';
   styleUrl: './contact.scss',
 })
 export class Contact implements OnInit {
-  captchaToken: string | null = null;;
+  captchaToken: string | null = null;
+  siteKey: any | null = null;
 
   constructor(
     private http: HttpClient,
@@ -25,7 +27,10 @@ export class Contact implements OnInit {
   });
 
   ngOnInit() {
-   this.loadCaptchaTokenListener();
+    this.siteKey = environment.recaptchaSiteKey;
+    console.log(this.siteKey)
+    console.log(environment.formEndpoint)
+    this.loadCaptchaTokenListener();
   }
 
   onFormSubmit(){
@@ -42,7 +47,7 @@ export class Contact implements OnInit {
         'g-recaptcha-response': this.captchaToken
       };
       
-      this.http.post("https://formspree.io/f/xojkqzpk", formData).subscribe({
+      this.http.post(environment.formEndpoint, formData).subscribe({
         next: (res) => {
           this.toast.success('Message sent.');
           this.contactform.reset();
