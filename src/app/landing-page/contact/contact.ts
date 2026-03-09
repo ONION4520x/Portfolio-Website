@@ -28,8 +28,6 @@ export class Contact implements OnInit {
 
   ngOnInit() {
     this.siteKey = environment.recaptchaSiteKey;
-    console.log(this.siteKey)
-    console.log(environment.formEndpoint)
     this.loadCaptchaTokenListener();
   }
 
